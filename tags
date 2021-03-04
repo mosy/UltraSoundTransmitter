@@ -1,0 +1,46 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+BUTTON_PRESSED	rotary.h	/^    const unsigned char BUTTON_PRESSED = 0x01;$/;"	m	class:Rotary	typeref:typename:const unsigned char
+BUTTON_PRESSED_RELEASED	rotary.h	/^    const unsigned char BUTTON_PRESSED_RELEASED = 0x11;$/;"	m	class:Rotary	typeref:typename:const unsigned char
+BUTTON_RELEASED	rotary.h	/^    const unsigned char BUTTON_RELEASED = 0x10;$/;"	m	class:Rotary	typeref:typename:const unsigned char
+BUTTON_RESET	rotary.h	/^    const unsigned char BUTTON_RESET = 0x00;$/;"	m	class:Rotary	typeref:typename:const unsigned char
+DIR_CCW	rotary.h	/^#define DIR_CCW /;"	d
+DIR_CW	rotary.h	/^#define DIR_CW /;"	d
+DIR_NONE	rotary.h	/^#define DIR_NONE /;"	d
+ENABLE_PULLUPS	rotary.h	/^#define ENABLE_PULLUPS$/;"	d
+R_CCW_BEGIN	rotary.cpp	/^#define R_CCW_BEGIN /;"	d	file:
+R_CCW_BEGIN_M	rotary.cpp	/^#define R_CCW_BEGIN_M /;"	d	file:
+R_CCW_FINAL	rotary.cpp	/^#define R_CCW_FINAL /;"	d	file:
+R_CCW_NEXT	rotary.cpp	/^#define R_CCW_NEXT /;"	d	file:
+R_CW_BEGIN	rotary.cpp	/^#define R_CW_BEGIN /;"	d	file:
+R_CW_BEGIN_M	rotary.cpp	/^#define R_CW_BEGIN_M /;"	d	file:
+R_CW_FINAL	rotary.cpp	/^#define R_CW_FINAL /;"	d	file:
+R_CW_NEXT	rotary.cpp	/^#define R_CW_NEXT /;"	d	file:
+R_START	rotary.cpp	/^#define R_START /;"	d	file:
+R_START_M	rotary.cpp	/^#define R_START_M /;"	d	file:
+Rotary	rotary.cpp	/^Rotary::Rotary(char _pin1, char _pin2) {$/;"	f	class:Rotary
+Rotary	rotary.cpp	/^Rotary::Rotary(char _pin1, char _pin2, char _buttonPin) {$/;"	f	class:Rotary
+Rotary	rotary.h	/^class Rotary$/;"	c
+buttonPin	rotary.h	/^    unsigned char buttonPin;$/;"	m	class:Rotary	typeref:typename:unsigned char
+buttonPressedHeld	rotary.cpp	/^bool Rotary::buttonPressedHeld(short delay_millis) {$/;"	f	class:Rotary	typeref:typename:bool
+buttonPressedReleased	rotary.cpp	/^bool Rotary::buttonPressedReleased(short debounce_delay) {$/;"	f	class:Rotary	typeref:typename:bool
+buttonState	rotary.h	/^    unsigned char buttonState;$/;"	m	class:Rotary	typeref:typename:unsigned char
+buttonTimer	rotary.h	/^    unsigned long buttonTimer;$/;"	m	class:Rotary	typeref:typename:unsigned long
+clockwise	rotary.cpp	/^unsigned char Rotary::clockwise() {$/;"	f	class:Rotary	typeref:typename:unsigned char
+counterClockwise	rotary.cpp	/^unsigned char Rotary::counterClockwise() {$/;"	f	class:Rotary	typeref:typename:unsigned char
+init	rotary.cpp	/^void Rotary::init(char _pin1, char _pin2) {$/;"	f	class:Rotary	typeref:typename:void
+pin1	rotary.h	/^    unsigned char pin1;$/;"	m	class:Rotary	typeref:typename:unsigned char
+pin2	rotary.h	/^    unsigned char pin2;$/;"	m	class:Rotary	typeref:typename:unsigned char
+process	rotary.cpp	/^unsigned char Rotary::process() {$/;"	f	class:Rotary	typeref:typename:unsigned char
+readButton	rotary.cpp	/^unsigned char Rotary::readButton() {$/;"	f	class:Rotary	typeref:typename:unsigned char
+resetButton	rotary.cpp	/^void Rotary::resetButton() {$/;"	f	class:Rotary	typeref:typename:void
+rotary_h	rotary.h	/^#define rotary_h$/;"	d
+state	rotary.h	/^    unsigned char state;$/;"	m	class:Rotary	typeref:typename:unsigned char
+ttable	rotary.cpp	/^const unsigned char ttable[6][4] = {$/;"	v	typeref:typename:const unsigned char[6][4]
+ttable	rotary.cpp	/^const unsigned char ttable[7][4] = {$/;"	v	typeref:typename:const unsigned char[7][4]
