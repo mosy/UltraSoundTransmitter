@@ -8,6 +8,7 @@
 #include <Adafruit_MCP4725.h> // DAC
 LiquidCrystal lcd(8,9,4,5,6,7);
 
+
 //Define pins
 #define PINA 2
 #define PINB 3
