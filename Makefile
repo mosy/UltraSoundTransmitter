@@ -73,7 +73,7 @@ MAKE_DIR   := $(PWD)
 #OTA_PORT   ?= 8266
 #OTA_PASS   ?=
 # ----- setup for Arduino Uno
-FQBN        ?= arduino:avr:uno
+FQBN        ?= arduino:avr:nano:cpu=atmega328old
 # ----- ---------------------
 V          ?= 0
 VFLAG      =
