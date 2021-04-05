@@ -1,7 +1,7 @@
 // Nivå 2 Koble opp ultarlyd måler, skrive inn kode og teste krets
 // Nivå 3 Koble opp display og få opp avstand
 
-#include <LiquidCrystal.h>
+//#include <LiquidCrystal.h>
 #include "rotary.h"// rotary handler
 
 #include <Wire.h> // I²C
