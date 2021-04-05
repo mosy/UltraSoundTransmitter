@@ -22,6 +22,7 @@ DIR_NONE	rotary.h	/^#define DIR_NONE /;"	d
 ELF	Makefile	/^ELF        := $(BUILD_DIR)\/$(SRC).elf$/;"	m
 ENABLE_PULLUPS	rotary.h	/^#define ENABLE_PULLUPS$/;"	d
 FQBN	Makefile	/^FQBN        ?= arduino:avr:nano$/;"	m
+FQBN	Makefile	/^FQBN        ?= arduino:avr:nano:cpu=atmega328old$/;"	m
 HDRS	Makefile	/^HDRS       := $(wildcard *.h)$/;"	m
 MAKE_DIR	Makefile	/^MAKE_DIR   := $(PWD)$/;"	m
 R_CCW_BEGIN	rotary.cpp	/^#define R_CCW_BEGIN /;"	d	file:
