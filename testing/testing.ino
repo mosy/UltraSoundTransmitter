@@ -2,11 +2,17 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h> //display
 #include <Adafruit_MCP4725.h> // DAC
+#include "rotary.h"// rotary handler
 
 // Declaration for an SSD1306 display connected to I2C (SDA,SCL pins)
 #define OLED_RESET -1 // Reset pin # (or -1 if sharing Arduino reset pin)
 Adafruit_SSD1306 display = Adafruit_SSD1306(128, 32, &Wire);
 
+#define PINA 2
+#define PINB 3
+#define PUSHB 4
+Rotary r = Rotary(PINA, PINB, PUSHB);				 // there is no must for using interrupt pins !!
+float offset = 0;
 // define the pins used for the HC-SR04.
 const int trigger = 11;
 const int echo = 10;
@@ -46,12 +52,25 @@ void loop()
 	display.setTextColor(SSD1306_WHITE);
 	// Where shall we put the new text
 	display.setCursor(0,0);
-	//the next 3 lines is displaying the actual text
-	display.print("Avstand = ");
-	display.print(distance);
+	display.print("Level = ");
+	display.print((70+float(offset))-distance);
+	display.print(" cm");
+	display.setCursor(0,10);
+	display.print("Avstand til bunn      = ");
+	display.print(offset+70);
 	display.print(" cm");
 	// actually display all of the above
 	display.display();
 	int dacValue = int(distance*40.95);
   	dac1.setVoltage(dacValue, false);
+	volatile unsigned char result = r.process();
+
+
+
+
+		if (result == DIR_CCW) 
+			offset=offset-0.25;
+		else if (result == DIR_CW) 
+			offset=offset+0.25;
+		
 }
