@@ -14,8 +14,8 @@
 #define PINA 2
 #define PINB 3
 #define PUSHB A2
-#define trigPin 10
-#define echoPin 11
+#define trigPin 11
+#define echoPin 10
 
 // DAC
 Adafruit_MCP4725 dac1;

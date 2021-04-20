@@ -73,11 +73,7 @@ MAKE_DIR   := $(PWD)
 #OTA_PORT   ?= 8266
 #OTA_PASS   ?=
 # ----- setup for Arduino Uno
-<<<<<<< HEAD
-FQBN        ?= arduino:avr:nano
-=======
 FQBN        ?= arduino:avr:nano:cpu=atmega328old
->>>>>>> 51425a575d5c95b1d1d1309dbd930a96aeea41e8
 # ----- ---------------------
 V          ?= 0
 VFLAG      =
@@ -126,12 +122,8 @@ $(ELF): $(SRC) $(HDRS)
 	arduino-cli compile -b $(FQBN) $(VFLAG)
 	@if which arduino-manifest.pl; \
 	then echo "---> Generating manifest.txt"; \
-<<<<<<< HEAD
-	arduino-manifest.pl -b $(FQBN) $(SRC) $(HDRS) > manifest.txt; \ else echo "---> If you want to generate manifest.txt, listing used libraries and their versions,"; \
-=======
 	arduino-manifest.pl -b $(FQBN) $(SRC) $(HDRS) > manifest.txt; \
 	else echo "---> If you want to generate manifest.txt, listing used libraries and their versions,"; \
->>>>>>> 51425a575d5c95b1d1d1309dbd930a96aeea41e8
 	echo "---> please install arduino-manifest, see https://github.com/digiampietro/arduino-manifest"; \
 	fi
 
