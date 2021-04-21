@@ -9,11 +9,17 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210110.0/
+$(ELF)	encmenu/Makefile	/^$(ELF): $(SRC) $(HDRS)$/;"	t
 $(ELF)	maincode/Makefile	/^$(ELF): $(SRC) $(HDRS)$/;"	t
+$(ELF)	simpmenu/Makefile	/^$(ELF): $(SRC) $(HDRS)$/;"	t
 $(ELF)	testing/Makefile	/^$(ELF): $(SRC) $(HDRS)$/;"	t
+BIN	encmenu/Makefile	/^BIN        := $(BUILD_DIR)\/$(SRC).bin$/;"	m
 BIN	maincode/Makefile	/^BIN        := $(BUILD_DIR)\/$(SRC).bin$/;"	m
+BIN	simpmenu/Makefile	/^BIN        := $(BUILD_DIR)\/$(SRC).bin$/;"	m
 BIN	testing/Makefile	/^BIN        := $(BUILD_DIR)\/$(SRC).bin$/;"	m
+BUILD_DIR	encmenu/Makefile	/^BUILD_DIR  := $(subst :,.,build\/$(FQBN))$/;"	m
 BUILD_DIR	maincode/Makefile	/^BUILD_DIR  := $(subst :,.,build\/$(FQBN))$/;"	m
+BUILD_DIR	simpmenu/Makefile	/^BUILD_DIR  := $(subst :,.,build\/$(FQBN))$/;"	m
 BUILD_DIR	testing/Makefile	/^BUILD_DIR  := $(subst :,.,build\/$(FQBN))$/;"	m
 BUTTON_PRESSED	maincode/rotary.h	/^    const unsigned char BUTTON_PRESSED = 0x01;$/;"	m	class:Rotary	typeref:typename:const unsigned char
 BUTTON_PRESSED	testing/rotary.h	/^    const unsigned char BUTTON_PRESSED = 0x01;$/;"	m	class:Rotary	typeref:typename:const unsigned char
@@ -29,16 +35,24 @@ DIR_CW	maincode/rotary.h	/^#define DIR_CW /;"	d
 DIR_CW	testing/rotary.h	/^#define DIR_CW /;"	d
 DIR_NONE	maincode/rotary.h	/^#define DIR_NONE /;"	d
 DIR_NONE	testing/rotary.h	/^#define DIR_NONE /;"	d
+ELF	encmenu/Makefile	/^ELF        := $(BUILD_DIR)\/$(SRC).elf$/;"	m
 ELF	maincode/Makefile	/^ELF        := $(BUILD_DIR)\/$(SRC).elf$/;"	m
+ELF	simpmenu/Makefile	/^ELF        := $(BUILD_DIR)\/$(SRC).elf$/;"	m
 ELF	testing/Makefile	/^ELF        := $(BUILD_DIR)\/$(SRC).elf$/;"	m
 ENABLE_PULLUPS	maincode/rotary.h	/^#define ENABLE_PULLUPS$/;"	d
 ENABLE_PULLUPS	testing/rotary.h	/^#define ENABLE_PULLUPS$/;"	d
+FQBN	encmenu/Makefile	/^FQBN        ?= arduino:avr:nano:cpu=atmega328old$/;"	m
 FQBN	maincode/Makefile	/^FQBN        ?= arduino:avr:nano:cpu=atmega328old$/;"	m
+FQBN	simpmenu/Makefile	/^FQBN        ?= arduino:avr:nano:cpu=atmega328old$/;"	m
 FQBN	testing/Makefile	/^FQBN        ?= arduino:avr:nano:cpu=atmega328old$/;"	m
 HALF_STEP	testing/rotary.h	/^#define HALF_STEP$/;"	d
+HDRS	encmenu/Makefile	/^HDRS       := $(wildcard *.h)$/;"	m
 HDRS	maincode/Makefile	/^HDRS       := $(wildcard *.h)$/;"	m
+HDRS	simpmenu/Makefile	/^HDRS       := $(wildcard *.h)$/;"	m
 HDRS	testing/Makefile	/^HDRS       := $(wildcard *.h)$/;"	m
+MAKE_DIR	encmenu/Makefile	/^MAKE_DIR   := $(PWD)$/;"	m
 MAKE_DIR	maincode/Makefile	/^MAKE_DIR   := $(PWD)$/;"	m
+MAKE_DIR	simpmenu/Makefile	/^MAKE_DIR   := $(PWD)$/;"	m
 MAKE_DIR	testing/Makefile	/^MAKE_DIR   := $(PWD)$/;"	m
 R_CCW_BEGIN	maincode/rotary.cpp	/^#define R_CCW_BEGIN /;"	d	file:
 R_CCW_BEGIN	testing/rotary.cpp	/^#define R_CCW_BEGIN /;"	d	file:
@@ -66,21 +80,37 @@ Rotary	maincode/rotary.h	/^class Rotary$/;"	c
 Rotary	testing/rotary.cpp	/^Rotary::Rotary(char _pin1, char _pin2) {$/;"	f	class:Rotary
 Rotary	testing/rotary.cpp	/^Rotary::Rotary(char _pin1, char _pin2, char _buttonPin) {$/;"	f	class:Rotary
 Rotary	testing/rotary.h	/^class Rotary$/;"	c
+SERIAL_DEV	encmenu/Makefile	/^    SERIAL_DEV = \/dev\/ttyACM0$/;"	m
+SERIAL_DEV	encmenu/Makefile	/^    SERIAL_DEV = \/dev\/ttyUSB0$/;"	m
+SERIAL_DEV	encmenu/Makefile	/^    SERIAL_DEV = unknown$/;"	m
 SERIAL_DEV	maincode/Makefile	/^    SERIAL_DEV = \/dev\/ttyACM0$/;"	m
 SERIAL_DEV	maincode/Makefile	/^    SERIAL_DEV = \/dev\/ttyUSB0$/;"	m
 SERIAL_DEV	maincode/Makefile	/^    SERIAL_DEV = unknown$/;"	m
+SERIAL_DEV	simpmenu/Makefile	/^    SERIAL_DEV = \/dev\/ttyACM0$/;"	m
+SERIAL_DEV	simpmenu/Makefile	/^    SERIAL_DEV = \/dev\/ttyUSB0$/;"	m
+SERIAL_DEV	simpmenu/Makefile	/^    SERIAL_DEV = unknown$/;"	m
 SERIAL_DEV	testing/Makefile	/^    SERIAL_DEV = \/dev\/ttyACM0$/;"	m
 SERIAL_DEV	testing/Makefile	/^    SERIAL_DEV = \/dev\/ttyUSB0$/;"	m
 SERIAL_DEV	testing/Makefile	/^    SERIAL_DEV = unknown$/;"	m
+SRC	encmenu/Makefile	/^SRC        := $(wildcard *.ino)$/;"	m
 SRC	maincode/Makefile	/^SRC        := $(wildcard *.ino)$/;"	m
+SRC	simpmenu/Makefile	/^SRC        := $(wildcard *.ino)$/;"	m
 SRC	testing/Makefile	/^SRC        := $(wildcard *.ino)$/;"	m
+V	encmenu/Makefile	/^V          ?= 0$/;"	m
 V	maincode/Makefile	/^V          ?= 0$/;"	m
+V	simpmenu/Makefile	/^V          ?= 0$/;"	m
 V	testing/Makefile	/^V          ?= 0$/;"	m
+VFLAG	encmenu/Makefile	/^VFLAG      =$/;"	m
+VFLAG	encmenu/Makefile	/^VFLAG      =-v$/;"	m
 VFLAG	maincode/Makefile	/^VFLAG      =$/;"	m
 VFLAG	maincode/Makefile	/^VFLAG      =-v$/;"	m
+VFLAG	simpmenu/Makefile	/^VFLAG      =$/;"	m
+VFLAG	simpmenu/Makefile	/^VFLAG      =-v$/;"	m
 VFLAG	testing/Makefile	/^VFLAG      =$/;"	m
 VFLAG	testing/Makefile	/^VFLAG      =-v$/;"	m
+all	encmenu/Makefile	/^all: $(ELF) upload$/;"	t
 all	maincode/Makefile	/^all: $(ELF) upload$/;"	t
+all	simpmenu/Makefile	/^all: $(ELF) upload$/;"	t
 all	testing/Makefile	/^all: $(ELF) upload$/;"	t
 buttonPin	maincode/rotary.h	/^    unsigned char buttonPin;$/;"	m	class:Rotary	typeref:typename:unsigned char
 buttonPin	testing/rotary.h	/^    unsigned char buttonPin;$/;"	m	class:Rotary	typeref:typename:unsigned char
@@ -92,19 +122,27 @@ buttonState	maincode/rotary.h	/^    unsigned char buttonState;$/;"	m	class:Rotar
 buttonState	testing/rotary.h	/^    unsigned char buttonState;$/;"	m	class:Rotary	typeref:typename:unsigned char
 buttonTimer	maincode/rotary.h	/^    unsigned long buttonTimer;$/;"	m	class:Rotary	typeref:typename:unsigned long
 buttonTimer	testing/rotary.h	/^    unsigned long buttonTimer;$/;"	m	class:Rotary	typeref:typename:unsigned long
+clean	encmenu/Makefile	/^clean:$/;"	t
 clean	maincode/Makefile	/^clean:$/;"	t
+clean	simpmenu/Makefile	/^clean:$/;"	t
 clean	testing/Makefile	/^clean:$/;"	t
 clockwise	maincode/rotary.cpp	/^unsigned char Rotary::clockwise() {$/;"	f	class:Rotary	typeref:typename:unsigned char
 clockwise	testing/rotary.cpp	/^unsigned char Rotary::clockwise() {$/;"	f	class:Rotary	typeref:typename:unsigned char
+compile	encmenu/Makefile	/^compile: $(ELF)$/;"	t
 compile	maincode/Makefile	/^compile: $(ELF)$/;"	t
+compile	simpmenu/Makefile	/^compile: $(ELF)$/;"	t
 compile	testing/Makefile	/^compile: $(ELF)$/;"	t
 counterClockwise	maincode/rotary.cpp	/^unsigned char Rotary::counterClockwise() {$/;"	f	class:Rotary	typeref:typename:unsigned char
 counterClockwise	testing/rotary.cpp	/^unsigned char Rotary::counterClockwise() {$/;"	f	class:Rotary	typeref:typename:unsigned char
+find	encmenu/Makefile	/^find:$/;"	t
 find	maincode/Makefile	/^find:$/;"	t
+find	simpmenu/Makefile	/^find:$/;"	t
 find	testing/Makefile	/^find:$/;"	t
 init	maincode/rotary.cpp	/^void Rotary::init(char _pin1, char _pin2) {$/;"	f	class:Rotary	typeref:typename:void
 init	testing/rotary.cpp	/^void Rotary::init(char _pin1, char _pin2) {$/;"	f	class:Rotary	typeref:typename:void
+ota	encmenu/Makefile	/^ota:$/;"	t
 ota	maincode/Makefile	/^ota:$/;"	t
+ota	simpmenu/Makefile	/^ota:$/;"	t
 ota	testing/Makefile	/^ota:$/;"	t
 pin1	maincode/rotary.h	/^    unsigned char pin1;$/;"	m	class:Rotary	typeref:typename:unsigned char
 pin1	testing/rotary.h	/^    unsigned char pin1;$/;"	m	class:Rotary	typeref:typename:unsigned char
@@ -114,7 +152,9 @@ process	maincode/rotary.cpp	/^unsigned char Rotary::process() {$/;"	f	class:Rota
 process	testing/rotary.cpp	/^unsigned char Rotary::process() {$/;"	f	class:Rotary	typeref:typename:unsigned char
 readButton	maincode/rotary.cpp	/^unsigned char Rotary::readButton() {$/;"	f	class:Rotary	typeref:typename:unsigned char
 readButton	testing/rotary.cpp	/^unsigned char Rotary::readButton() {$/;"	f	class:Rotary	typeref:typename:unsigned char
+requirements	encmenu/Makefile	/^requirements:$/;"	t
 requirements	maincode/Makefile	/^requirements:$/;"	t
+requirements	simpmenu/Makefile	/^requirements:$/;"	t
 requirements	testing/Makefile	/^requirements:$/;"	t
 resetButton	maincode/rotary.cpp	/^void Rotary::resetButton() {$/;"	f	class:Rotary	typeref:typename:void
 resetButton	testing/rotary.cpp	/^void Rotary::resetButton() {$/;"	f	class:Rotary	typeref:typename:void
@@ -126,5 +166,7 @@ ttable	maincode/rotary.cpp	/^const unsigned char ttable[6][4] = {$/;"	v	typeref:
 ttable	maincode/rotary.cpp	/^const unsigned char ttable[7][4] = {$/;"	v	typeref:typename:const unsigned char[7][4]
 ttable	testing/rotary.cpp	/^const unsigned char ttable[6][4] = {$/;"	v	typeref:typename:const unsigned char[6][4]
 ttable	testing/rotary.cpp	/^const unsigned char ttable[7][4] = {$/;"	v	typeref:typename:const unsigned char[7][4]
+upload	encmenu/Makefile	/^upload:$/;"	t
 upload	maincode/Makefile	/^upload:$/;"	t
+upload	simpmenu/Makefile	/^upload:$/;"	t
 upload	testing/Makefile	/^upload:$/;"	t
