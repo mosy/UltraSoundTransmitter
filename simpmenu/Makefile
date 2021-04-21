@@ -84,7 +84,7 @@ endif
 
 ifndef SERIAL_DEV
   ifneq (,$(wildcard /dev/ttyUSB0))
-    SERIAL_DEV = /dev/ttyUSB0
+    SERIAL_DEV = /dev/ttyUSB3
   else ifneq (,$(wildcard /dev/ttyACM0))
     SERIAL_DEV = /dev/ttyACM0
   else

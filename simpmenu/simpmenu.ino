@@ -9,8 +9,8 @@ int frame = 1;
 int page = 1;
 int lastMenuItem = 1;
 
-String menuItem1 = "Contrast";
-String menuItem2 = "Volume";
+String menuItem1 = "Avstand til bunn";
+String menuItem2 = "Tidskonstant";
 
 int contrast=60;
 int volume = 50;
@@ -31,14 +31,12 @@ Adafruit_SSD1306 display(128,32, &Wire,OLED_RESET);
 void setup() {
 display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
 	pinMode(7,OUTPUT);
-	turnBacklightOn();
 	
 	encoder = new ClickEncoder(2,3,4);
 	encoder->setAccelerationEnabled(false);
 	 
 	display.begin();			
 	display.clearDisplay(); 
-	setContrast();	
 
 	Timer1.initialize(1000);
 	Timer1.attachInterrupt(timerIsr); 
@@ -53,28 +51,24 @@ void loop()
 
 	readRotaryEncoder();
 
-	 ClickEncoder::Button b = encoder->getButton();
-	 if (b != ClickEncoder::Open) {
-	 switch (b) {
-			case ClickEncoder::Clicked:
-				 middle=true;
-				break;
+	ClickEncoder::Button b = encoder->getButton();
+	if (b != ClickEncoder::Open) 
+	{
+		switch (b) 
+		{
+		case ClickEncoder::Clicked:
+			middle=true;
+			break;
 		}
 	}		 
 	
 	if (up && page == 1 ) {
 		 
 		up = false;
-		if(menuitem==2 && frame ==2)
-		{
-			frame--;
-		}
 		lastMenuItem = menuitem;
 		menuitem--;
 		if (menuitem==0)
-		{
 			menuitem=1;
-		} 
 	}else if (up && page == 2 && menuitem==1 ) {
 		up = false;
 		contrast--;
@@ -88,6 +82,9 @@ void loop()
 	{
 		down = false;
 		lastMenuItem = menuitem;
+		menuitem++;
+		if (menuitem==3)
+			menuitem=2;
 	}else if (down && page == 2 && menuitem==1) {
 		down = false;
 		contrast++;
@@ -116,20 +113,19 @@ void loop()
 		display.setTextSize(1);
 		display.clearDisplay();
 		display.setTextColor(WHITE,BLACK );
-//		display.setCursor(15, 0);
-		//display.println("		 MAIN MENU");
-		//display.drawFastHLine(0,7,128,WHITE);//BLACK
+		display.setCursor(35, 0);
+		display.println("MAIN MENU");
+		display.drawFastHLine(0,10,128,WHITE);//BLACK
 
 		if(menuitem==1 && frame ==1)
 		{		
-			displayMenuItem(menuItem1, 1,true);
-			displayMenuItem(menuItem2, 11,false);
+			displayMenuItem(menuItem1, 12,true);
+			displayMenuItem(menuItem2, 22,false);
 		}
 		else if(menuitem == 2 && frame == 1)
 		{
-			displayMenuItem(menuItem1, 1,false);
-			displayMenuItem(menuItem2, 11,true);
-			displayMenuItem(menuItem3, 21,false);
+			displayMenuItem(menuItem1, 12,false);
+			displayMenuItem(menuItem2, 22,true);
 		}
 		display.display();
 	}
@@ -166,7 +162,7 @@ void displayIntMenuPage(String menuItem, int value)
 		display.drawFastHLine(0,10,127,WHITE);//BLACK
 		display.setCursor(5, 15);
 		display.println("Value");
-		display.setTextSize(2);
+		display.setTextSize(1);
 		display.setCursor(5, 25);
 		display.println(value);
 		display.setTextSize(1);
@@ -183,10 +179,10 @@ void displayStringMenuPage(String menuItem, String value)
 		display.drawFastHLine(0,10,128,WHITE);//BLACK
 		display.setCursor(5, 15);
 		display.println("Value");
-		display.setTextSize(2);
+		display.setTextSize(1);
 		display.setCursor(5, 25);
 		display.println(value);
-		display.setTextSize(2);
+		display.setTextSize(1);
 		display.display();
 }
 
