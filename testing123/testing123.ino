@@ -91,6 +91,16 @@ void loop()
 	readRotaryEncoder();
 
 
+	if (down) 
+	{
+		offset=offset-0.25;
+		down = false;
+	}
+	else if (up) 
+	{
+		offset=offset+0.25;
+		up = false;
+	}
 
 		
 }
@@ -121,14 +131,4 @@ void readRotaryEncoder()
 		delay(150);
 	}
 
-	if (down) 
-	{
-		offset=offset-0.25;
-		down = false;
-	}
-	else if (up) 
-	{
-		offset=offset+0.25;
-		up = false;
-	}
 }
